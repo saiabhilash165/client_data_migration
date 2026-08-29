@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Migration Graph</title>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+    <h2>Client Data Migration Graph</h2>
+
+    <div class="mermaid">
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	load_schema(load_schema)
+	read_files(read_files)
+	llm_column_mapping(llm_column_mapping)
+	check_mapping(check_mapping)
+	apply_mapping(apply_mapping)
+	clean_data(clean_data)
+	combine_tables(combine_tables)
+	deduplicate(deduplicate)
+	validate_records(validate_records)
+	create_final_json(create_final_json)
+	delta_check(delta_check)
+	push_to_api(push_to_api)
+	stop_for_review(stop_for_review)
+	finish(finish)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> load_schema;
+	apply_mapping --> clean_data;
+	check_mapping -. &nbsp;continue&nbsp; .-> apply_mapping;
+	check_mapping -. &nbsp;needs_review&nbsp; .-> stop_for_review;
+	clean_data --> combine_tables;
+	combine_tables --> deduplicate;
+	create_final_json --> delta_check;
+	deduplicate --> validate_records;
+	delta_check --> push_to_api;
+	llm_column_mapping --> check_mapping;
+	load_schema --> read_files;
+	push_to_api --> finish;
+	read_files --> llm_column_mapping;
+	validate_records -. &nbsp;continue&nbsp; .-> create_final_json;
+	validate_records -. &nbsp;needs_review&nbsp; .-> stop_for_review;
+	finish --> __end__;
+	stop_for_review --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+
+    </div>
+
+    <script>
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+</body>
+</html>

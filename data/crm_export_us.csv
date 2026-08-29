@@ -1,0 +1,12 @@
+Client_Region,Opportunity_ID,Client_Name,Contact_Email,Deal_Value_USD,Pipeline_Stage,Expected_Closure_Date,Owner_Type,Tech_Stack
+USA,1001, Acme Corp ,john.smith@acme.com,125000.00,QUALIFICATION,09/15/2026,Enterprise,Salesforce / AWS
+USA,1002,Global Logistics,  sarah.c@globallogistics.com,85000.50,Proposal Sent,10/01/2026,SMB,HubSpot
+USA,1003,Apex Dynamics,mark.d@apexdyn.com,45000.00,Closed Won,08/10/2026,Mid-Market,Custom Stack
+USA,1004,Starlight Retail,,210000.00,Negotiation,11/20/2026,Enterprise,Shopify / Netsuite
+USA,1005, Horizon Labs ,contact@horizon.io,32000.00, qualification ,09/30/2026,Startup,GSuite
+USA,1006,Vanguard Systems,e.miller@vanguard.com,150000.00,PROPOSAL SENT,12/05/2026,Enterprise,AWS / Azure
+USA,1007,NextGen Media,info@nextgen.com,67000.00,Closed Lost,07/22/2026,SMB,WordPress
+USA,1008, Summit Health ,j.doe@summithealth.org,95000.00,Negotiation,10/15/2026,Mid-Market,Salesforce
+USA,1009,BlueWave Tech,a.wilson@bluewave.com,310000.00,Proposal Sent,01/18/2027,Enterprise,Oracle
+USA,1003,Apex Dynamics,mark.d@apexdyn.com,45000.00,Closed Won,08/10/2026,Mid-Market,Custom Stack
+USA,1003,Apex Dynamics,mark.d@apexdyn.com,47000.00,Closed Won,08/10/2026,Mid-Market,Custom Stack

@@ -1,0 +1,19 @@
+[
+  {
+    "issue_type": "duplicate_conflict",
+    "source_file": "crm_export_us.csv",
+    "row_number": "3",
+    "field_name": "deal_value_usd",
+    "current_value": {
+      "deal_value_usd": [
+        "47000.0",
+        "45000.0"
+      ]
+    },
+    "suggested_value": null,
+    "reason": "Duplicate records found with conflicting values. Human review is needed.",
+    "status": "resolved",
+    "resolved_value": "{'deal_value_usd': '47000.0'}",
+    "resolved_at": "2026-08-29 13:27:37"
+  }
+]

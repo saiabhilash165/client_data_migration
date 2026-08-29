@@ -1,0 +1,731 @@
+[
+  {
+    "timestamp": "2026-08-29 13:26:02",
+    "action": "target_schema_loaded",
+    "details": {
+      "schema_path": "config/target_schema.json"
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:02",
+    "action": "file_read",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "row_count": 10,
+      "columns": [
+        "Land",
+        "Vorgangs_ID",
+        "Firmenname",
+        "Kontakt_E_Mail",
+        "Umsatz_Prognose_EUR",
+        "Vertiebsstufe",
+        "Abschluss_Datum",
+        "Klassifizierung",
+        "EU_VAT_ID",
+        "source_file",
+        "source_row_number"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:02",
+    "action": "file_read",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "row_count": 11,
+      "columns": [
+        "Country_Name",
+        "Deal_Ref_Code",
+        "Customer_Account",
+        "Email_ID",
+        "Forecasted_Rev_INR",
+        "Sales_Phase",
+        "Target_Date",
+        "Account_Grade",
+        "GST_Number",
+        "source_file",
+        "source_row_number"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:02",
+    "action": "file_read",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "row_count": 11,
+      "columns": [
+        "Client_Region",
+        "Opportunity_ID",
+        "Client_Name",
+        "Contact_Email",
+        "Deal_Value_USD",
+        "Pipeline_Stage",
+        "Expected_Closure_Date",
+        "Owner_Type",
+        "Tech_Stack",
+        "source_file",
+        "source_row_number"
+      ]
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:10",
+    "action": "llm_column_mapping_done",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "mapping": {
+        "file_name": "crm_export_germany.xlsx",
+        "mappings": [
+          {
+            "source_column": "Land",
+            "target_field": "country",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "Direct match to country field"
+          },
+          {
+            "source_column": "Vorgangs_ID",
+            "target_field": "deal_id",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "Unique deal identifier"
+          },
+          {
+            "source_column": "Firmenname",
+            "target_field": "company_name",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "Company name field"
+          },
+          {
+            "source_column": "Kontakt_E_Mail",
+            "target_field": "contact_email",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "Primary contact email"
+          },
+          {
+            "source_column": "Umsatz_Prognose_EUR",
+            "target_field": "deal_value_usd",
+            "confidence": 0.99,
+            "source_currency": "EUR",
+            "reason": "Deal value in EUR mapped to USD field"
+          },
+          {
+            "source_column": "Vertiebsstufe",
+            "target_field": "sales_stage",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "German stage mapped to normalized sales_stage"
+          },
+          {
+            "source_column": "Abschluss_Datum",
+            "target_field": "expected_close_date",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Date formatted to YYYY-MM-DD"
+          },
+          {
+            "source_column": "Klassifizierung",
+            "target_field": "customer_segment",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Customer classification mapped to segment"
+          },
+          {
+            "source_column": "EU_VAT_ID",
+            "target_field": "tax_id",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "VAT ID mapped to tax_id"
+          }
+        ],
+        "unmapped_columns": []
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:11",
+    "action": "llm_column_mapping_done",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "mapping": {
+        "file_name": "crm_export_india.csv",
+        "mappings": [
+          {
+            "source_column": "Country_Name",
+            "target_field": "country",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          },
+          {
+            "source_column": "Deal_Ref_Code",
+            "target_field": "deal_id",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          },
+          {
+            "source_column": "Customer_Account",
+            "target_field": "company_name",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          },
+          {
+            "source_column": "Email_ID",
+            "target_field": "contact_email",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          },
+          {
+            "source_column": "Forecasted_Rev_INR",
+            "target_field": "deal_value_usd",
+            "confidence": 0.99,
+            "source_currency": "INR",
+            "reason": "currency conversion"
+          },
+          {
+            "source_column": "Sales_Phase",
+            "target_field": "sales_stage",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "normalizes to allowed values"
+          },
+          {
+            "source_column": "Target_Date",
+            "target_field": "expected_close_date",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "date format conversion"
+          },
+          {
+            "source_column": "Account_Grade",
+            "target_field": "customer_segment",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          },
+          {
+            "source_column": "GST_Number",
+            "target_field": "tax_id",
+            "confidence": 0.99,
+            "source_currency": null,
+            "reason": "direct match"
+          }
+        ],
+        "unmapped_columns": []
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "llm_column_mapping_done",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "mapping": {
+        "file_name": "crm_export_us.csv",
+        "mappings": [
+          {
+            "source_column": "Client_Region",
+            "target_field": "country",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Region matches country field"
+          },
+          {
+            "source_column": "Opportunity_ID",
+            "target_field": "deal_id",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Unique identifier for deal"
+          },
+          {
+            "source_column": "Client_Name",
+            "target_field": "company_name",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Company name field"
+          },
+          {
+            "source_column": "Contact_Email",
+            "target_field": "contact_email",
+            "confidence": 0.95,
+            "source_currency": null,
+            "reason": "Primary contact email"
+          },
+          {
+            "source_column": "Deal_Value_USD",
+            "target_field": "deal_value_usd",
+            "confidence": 0.95,
+            "source_currency": "USD",
+            "reason": "Deal value in USD"
+          },
+          {
+            "source_column": "Pipeline_Stage",
+            "target_field": "sales_stage",
+            "confidence": 0.9,
+            "source_currency": null,
+            "reason": "Pipeline stage maps to sales stage"
+          },
+          {
+            "source_column": "Expected_Closure_Date",
+            "target_field": "expected_close_date",
+            "confidence": 0.9,
+            "source_currency": null,
+            "reason": "Expected closure date field"
+          },
+          {
+            "source_column": "Owner_Type",
+            "target_field": "customer_segment",
+            "confidence": 0.9,
+            "source_currency": null,
+            "reason": "Owner type matches customer segment"
+          },
+          {
+            "source_column": "Tech_Stack",
+            "target_field": null,
+            "confidence": 0.0,
+            "source_currency": null,
+            "reason": "No matching target field"
+          }
+        ],
+        "unmapped_columns": [
+          "Tech_Stack"
+        ]
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Land",
+      "target_field": "country",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Vorgangs_ID",
+      "target_field": "deal_id",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Firmenname",
+      "target_field": "company_name",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Kontakt_E_Mail",
+      "target_field": "contact_email",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Umsatz_Prognose_EUR",
+      "target_field": "deal_value_usd",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Vertiebsstufe",
+      "target_field": "sales_stage",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Abschluss_Datum",
+      "target_field": "expected_close_date",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "Klassifizierung",
+      "target_field": "customer_segment",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "source_column": "EU_VAT_ID",
+      "target_field": "tax_id",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Country_Name",
+      "target_field": "country",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Deal_Ref_Code",
+      "target_field": "deal_id",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Customer_Account",
+      "target_field": "company_name",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Email_ID",
+      "target_field": "contact_email",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Forecasted_Rev_INR",
+      "target_field": "deal_value_usd",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Sales_Phase",
+      "target_field": "sales_stage",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Target_Date",
+      "target_field": "expected_close_date",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "Account_Grade",
+      "target_field": "customer_segment",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "source_column": "GST_Number",
+      "target_field": "tax_id",
+      "confidence": 0.99
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Client_Region",
+      "target_field": "country",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Opportunity_ID",
+      "target_field": "deal_id",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Client_Name",
+      "target_field": "company_name",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Contact_Email",
+      "target_field": "contact_email",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Deal_Value_USD",
+      "target_field": "deal_value_usd",
+      "confidence": 0.95
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Pipeline_Stage",
+      "target_field": "sales_stage",
+      "confidence": 0.9
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Expected_Closure_Date",
+      "target_field": "expected_close_date",
+      "confidence": 0.9
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_auto_approved",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Owner_Type",
+      "target_field": "customer_segment",
+      "confidence": 0.9
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "column_ignored",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "source_column": "Tech_Stack",
+      "reason": "No matching target field"
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "columns_renamed",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "mapping": {
+        "Land": "country",
+        "Vorgangs_ID": "deal_id",
+        "Firmenname": "company_name",
+        "Kontakt_E_Mail": "contact_email",
+        "Umsatz_Prognose_EUR": "deal_value_usd",
+        "Vertiebsstufe": "sales_stage",
+        "Abschluss_Datum": "expected_close_date",
+        "Klassifizierung": "customer_segment",
+        "EU_VAT_ID": "tax_id"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "columns_renamed",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "mapping": {
+        "Country_Name": "country",
+        "Deal_Ref_Code": "deal_id",
+        "Customer_Account": "company_name",
+        "Email_ID": "contact_email",
+        "Forecasted_Rev_INR": "deal_value_usd",
+        "Sales_Phase": "sales_stage",
+        "Target_Date": "expected_close_date",
+        "Account_Grade": "customer_segment",
+        "GST_Number": "tax_id"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:39",
+    "action": "columns_renamed",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "mapping": {
+        "Client_Region": "country",
+        "Opportunity_ID": "deal_id",
+        "Client_Name": "company_name",
+        "Contact_Email": "contact_email",
+        "Deal_Value_USD": "deal_value_usd",
+        "Pipeline_Stage": "sales_stage",
+        "Expected_Closure_Date": "expected_close_date",
+        "Owner_Type": "customer_segment"
+      }
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:26:50",
+    "action": "file_cleaned",
+    "details": {
+      "file_name": "crm_export_germany.xlsx",
+      "row_count": 10
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:01",
+    "action": "file_cleaned",
+    "details": {
+      "file_name": "crm_export_india.csv",
+      "row_count": 11
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:12",
+    "action": "file_cleaned",
+    "details": {
+      "file_name": "crm_export_us.csv",
+      "row_count": 11
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:12",
+    "action": "tables_combined",
+    "details": {
+      "total_rows": 32
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:12",
+    "action": "deduplication_completed",
+    "details": {
+      "rows_after_deduplication": 28,
+      "issues_found": 1
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:12",
+    "action": "json_validation_completed",
+    "details": {
+      "issues_found": 0
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:12",
+    "action": "waiting_for_human_review",
+    "details": {
+      "open_issues": 1
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:37",
+    "action": "human_issue_resolved",
+    "details": {
+      "issue_index": 0,
+      "issue_type": "duplicate_conflict",
+      "source_file": "crm_export_us.csv",
+      "row_number": "3",
+      "field_name": "deal_value_usd",
+      "resolved_value": "{'deal_value_usd': '47000.0'}"
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "continuing_after_human_review",
+    "details": {}
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "json_validation_completed",
+    "details": {
+      "issues_found": 0
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "final_json_created",
+    "details": {
+      "record_count": 28
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "delta_check_completed",
+    "details": {
+      "to_create": 28,
+      "to_update": 0,
+      "to_skip": 0
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "api_push_completed",
+    "details": {
+      "result_count": 28
+    }
+  },
+  {
+    "timestamp": "2026-08-29 13:27:45",
+    "action": "migration_completed",
+    "details": {
+      "final_records": 28
+    }
+  }
+]

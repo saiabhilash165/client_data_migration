@@ -1,0 +1,70 @@
+{
+  "entity": "sales_deal",
+  "version": "1.0",
+  "description": "Target JSON schema for migrated sales CRM opportunity/deal records.",
+  "fields": {
+    "country": {
+      "type": "string",
+      "required": true,
+      "description": "Country or region of the sales deal."
+    },
+    "deal_id": {
+      "type": "string",
+      "required": true,
+      "description": "Unique deal or opportunity identifier from the source system."
+    },
+    "company_name": {
+      "type": "string",
+      "required": true,
+      "description": "Customer or company name."
+    },
+    "contact_email": {
+      "type": "string",
+      "format": "email",
+      "required": false,
+      "description": "Primary contact email for the deal."
+    },
+    "deal_value_usd": {
+      "type": "number",
+      "required": true,
+      "description": "Deal value converted to USD."
+    },
+    "sales_stage": {
+      "type": "string",
+      "required": true,
+      "allowed_values": [
+        "qualification",
+        "proposal",
+        "negotiation",
+        "closed_won",
+        "closed_lost"
+      ],
+      "description": "Normalized sales pipeline stage."
+    },
+    "expected_close_date": {
+      "type": "string",
+      "format": "date",
+      "required": true,
+      "description": "Expected deal closure date in YYYY-MM-DD format."
+    },
+    "customer_segment": {
+      "type": "string",
+      "required": false,
+      "description": "Customer classification, account grade, or segment."
+    },
+    "tax_id": {
+      "type": "string",
+      "required": false,
+      "description": "Tax identifier such as VAT ID or GST number."
+    },
+    "source_file": {
+      "type": "string",
+      "required": true,
+      "description": "Name of the source file from which the record came."
+    }
+  },
+  "unique_key": [
+    "country",
+    "deal_id"
+  ]
+}

@@ -1,0 +1,14 @@
+streamlit
+pandas
+openpyxl
+python-dateutil
+pydantic>=2.0
+fastapi
+uvicorn
+groq>=0.9
+requests
+python-dotenv
+jsonschema
+langgraph
+graph
+sqlite3

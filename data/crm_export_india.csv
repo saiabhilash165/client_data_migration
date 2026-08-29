@@ -1,0 +1,12 @@
+Country_Name,Deal_Ref_Code,Customer_Account,Email_ID,Forecasted_Rev_INR,Sales_Phase,Target_Date,Account_Grade,GST_Number
+India,501,Tata Solutions, rajesh.k@tata.com ,2500000.00,Proposal,15/10/2026,A1,27AAAAA0000A1Z5
+India,502,Reliance Infra,p.sharma@reliance.com,7500000.00,CLOSED WON,05/09/2026,Top Tier,27BBBCA1111B1Z2
+India,503,Infosys Systems,,1800000.00,Negotiation,30/11/2026,A2,29CCCCA2222C1Z9
+India,504,Wipro Tech,  s.naidu@wipro.com  ,4200000.00,qualification,20/08/2026,B1,29DDDDA3333D1Z4
+India,505, Mahindra Corp ,v.kumar@mahindra.com,3000000.00,Proposal,12/12/2026,A1,27EEEEA4444E1Z1
+India,506,Bharti Telecom,a.singh@bharti.com,9000000.00,Closed Won,01/11/2026,Top Tier,07FFFFA5555F1Z8
+India,507, HCL Technologies ,d.gupta@hcl.com,1200000.00, CLOSED LOST ,15/07/2026,B2,09GGGGA6666G1Z3
+India,508,Adani Power,m.patel@adani.com,65000.00,Negotiation,28/10/2026,A2,24HHHHA7777H1Z7
+India,509,L&T Construction,r.verma@lt.com,5100000.00,Qualification,05/01/2027,A1,27IIIIA8888I1Z0
+India,502,Reliance Infra,p.sharma@reliance.com,7500000.00,CLOSED WON,05/09/2026,Top Tier,27BBBCA1111B1Z2
+India,510,Zenith Retail,z.manager@zenith.com,2800000.00,Proposal,01/02/2026,A1,27JJJJA9999J1Z6

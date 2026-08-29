@@ -1,0 +1,29 @@
+country,deal_id,company_name,contact_email,deal_value_usd,sales_stage,expected_close_date,customer_segment,tax_id,source_file,source_row_number
+Germany,DE-801,Siemens AG,m.schmidt@siemens.de,110285.58,qualification,2026-10-15,Kat-A,DE123456789,crm_export_germany.xlsx,1
+Germany,DE-802,BMW Group,h.weber@bmw.de,278616.21,negotiation,2026-11-30,Premium,DE987654321,crm_export_germany.xlsx,2
+Germany,DE-803,Bosch GmbH,,208962.15,closed_won,2026-09-01,Kat-A,DE456789123,crm_export_germany.xlsx,3
+Germany,DE-804,SAP SE,f.fischer@sap.com,359879.27,proposal,2026-12-10,Core,DE321654987,crm_export_germany.xlsx,4
+Germany,DE-805,BASF SE,k.richter@basf.com,83584.86,closed_lost,2026-08-05,Kat-B,DE654987321,crm_export_germany.xlsx,5
+Germany,DE-806,Lufthansa Systems,t.schneider@lufthansa.de,133503.6,negotiation,2026-10-22,Premium,DE789123456,crm_export_germany.xlsx,6
+Germany,DE-807,Allianz SE,c.wagner@allianz.de,580450.43,qualification,2027-01-15,Premium,DE159753468,crm_export_germany.xlsx,7
+Germany,DE-808,Deutsche Telekom,u.becker@telekom.de,162526.12,closed_won,2026-09-28,Kat-A,DE357951246,crm_export_germany.xlsx,8
+Germany,DE-809,Continental AG,s.hoffmann@conti.de,102159.28,proposal,2026-11-05,Core,DE246813579,crm_export_germany.xlsx,9
+India,501,Tata Solutions,rajesh.k@tata.com,26168.75,proposal,2026-10-15,A1,27AAAAA0000A1Z5,crm_export_india.csv,1
+India,502,Reliance Infra,p.sharma@reliance.com,78506.25,closed_won,2026-09-05,Top Tier,27BBBCA1111B1Z2,crm_export_india.csv,2
+India,503,Infosys Systems,,18841.5,negotiation,2026-11-30,A2,29CCCCA2222C1Z9,crm_export_india.csv,3
+India,504,Wipro Tech,s.naidu@wipro.com,43963.5,qualification,2026-08-20,B1,29DDDDA3333D1Z4,crm_export_india.csv,4
+India,505,Mahindra Corp,v.kumar@mahindra.com,31402.5,proposal,2026-12-12,A1,27EEEEA4444E1Z1,crm_export_india.csv,5
+India,506,Bharti Telecom,a.singh@bharti.com,94207.5,closed_won,2026-11-01,Top Tier,07FFFFA5555F1Z8,crm_export_india.csv,6
+India,507,HCL Technologies,d.gupta@hcl.com,12561.0,closed_lost,2026-07-15,B2,09GGGGA6666G1Z3,crm_export_india.csv,7
+India,508,Adani Power,m.patel@adani.com,680.39,negotiation,2026-10-28,A2,24HHHHA7777H1Z7,crm_export_india.csv,8
+India,509,L&T Construction,r.verma@lt.com,53384.25,qualification,2027-01-05,A1,27IIIIA8888I1Z0,crm_export_india.csv,9
+India,510,Zenith Retail,z.manager@zenith.com,29309.0,proposal,2026-02-01,A1,27JJJJA9999J1Z6,crm_export_india.csv,11
+USA,1001,Acme Corp,john.smith@acme.com,125000.0,qualification,2026-09-15,Enterprise,,crm_export_us.csv,1
+USA,1002,Global Logistics,sarah.c@globallogistics.com,85000.5,proposal,2026-10-01,SMB,,crm_export_us.csv,2
+USA,1003,Apex Dynamics,mark.d@apexdyn.com,45000.0,closed_won,2026-08-10,Mid-Market,,crm_export_us.csv,3
+USA,1004,Starlight Retail,,210000.0,negotiation,2026-11-20,Enterprise,,crm_export_us.csv,4
+USA,1005,Horizon Labs,contact@horizon.io,32000.0,qualification,2026-09-30,Startup,,crm_export_us.csv,5
+USA,1006,Vanguard Systems,e.miller@vanguard.com,150000.0,proposal,2026-12-05,Enterprise,,crm_export_us.csv,6
+USA,1007,NextGen Media,info@nextgen.com,67000.0,closed_lost,2026-07-22,SMB,,crm_export_us.csv,7
+USA,1008,Summit Health,j.doe@summithealth.org,95000.0,negotiation,2026-10-15,Mid-Market,,crm_export_us.csv,8
+USA,1009,BlueWave Tech,a.wilson@bluewave.com,310000.0,proposal,2027-01-18,Enterprise,,crm_export_us.csv,9
